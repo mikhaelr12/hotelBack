@@ -3,9 +3,9 @@ create table users
 
     id       bigint primary key,
     username varchar(50) not null unique,
-    password varchar(50) not null,
+    password varchar(255) not null,
     email    varchar(50) not null unique,
-    phone_number varchar(30) unique,
+    phone_number varchar(30),
     role_id  bigint,
     constraint FK_ROLE_USER foreign key (role_id) references user_roles (id)
 );
