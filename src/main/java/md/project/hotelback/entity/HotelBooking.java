@@ -1,13 +1,21 @@
 package md.project.hotelback.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "hotel_bookings")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class HotelBooking {
 
     @Id
@@ -36,7 +44,6 @@ public class HotelBooking {
     @JoinColumn(name = "room_id", foreignKey = @ForeignKey(name = "FK_ROOM_BOOKING"))
     private Room room;
 
-    @ManyToOne
-    @JoinColumn(name = "status_id", foreignKey = @ForeignKey(name = "FK_STATUS_BOOKING"))
-    private BookingStatus bookingStatus;
+    @Column(name = "status_id")
+    private Long bookingStatus;
 }

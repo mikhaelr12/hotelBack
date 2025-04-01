@@ -1,9 +1,11 @@
 package md.project.hotelback.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Table(name = "hotels")
 @Entity
+@Data
 public class Hotel {
 
     @Id

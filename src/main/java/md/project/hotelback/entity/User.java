@@ -2,6 +2,7 @@ package md.project.hotelback.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class User implements UserDetails {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
@@ -33,6 +35,9 @@ public class User implements UserDetails {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @Column(name = "loyalty_points")
+    private Integer loyaltyPoints;
 
     @ManyToOne
     @JoinColumn(name = "role_id", foreignKey = @ForeignKey(name = "FK_ROLE_USER"))
