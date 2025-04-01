@@ -1,0 +1,22 @@
+INSERT INTO countries (id, country_name, city_name)
+VALUES
+    (nextval('country_id_seq'), 'Romania', 'Bucharest'),
+    (nextval('country_id_seq'), 'USA', 'New York'),
+    (nextval('country_id_seq'), 'France', 'Paris'),
+    (nextval('country_id_seq'), 'Germany', 'Berlin'),
+    (nextval('country_id_seq'), 'UK', 'London'),
+    (nextval('country_id_seq'), 'Italy', 'Rome'),
+    (nextval('country_id_seq'), 'Spain', 'Madrid'),
+    (nextval('country_id_seq'), 'Canada', 'Toronto'),
+    (nextval('country_id_seq'), 'Australia', 'Sydney'),
+    (nextval('country_id_seq'), 'Brazil', 'Sao Paulo'),
+    (nextval('country_id_seq'), 'India', 'Mumbai'),
+    (nextval('country_id_seq'), 'China', 'Beijing'),
+    (nextval('country_id_seq'), 'Russia', 'Moscow'),
+    (nextval('country_id_seq'), 'Japan', 'Tokyo'),
+    (nextval('country_id_seq'), 'South Korea', 'Seoul'),
+    (nextval('country_id_seq'), 'Mexico', 'Mexico City'),
+    (nextval('country_id_seq'), 'Argentina', 'Buenos Aires'),
+    (nextval('country_id_seq'), 'Egypt', 'Cairo'),
+    (nextval('country_id_seq'), 'South Africa', 'Johannesburg'),
+    (nextval('country_id_seq'), 'Turkey', 'Istanbul');

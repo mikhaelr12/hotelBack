@@ -1,0 +1,9 @@
+creational
+factory method - notifications
+prototype - car
+singleton - token extract
+builder - user role
+
+structural
+facade - booking facade
+adapter - payment, stripe, paypal

@@ -6,6 +6,7 @@ create table users
     password varchar(255) not null,
     email    varchar(50) not null unique,
     phone_number varchar(30),
+    loyalty_points int,
     role_id  bigint,
     constraint FK_ROLE_USER foreign key (role_id) references user_roles (id)
 );
