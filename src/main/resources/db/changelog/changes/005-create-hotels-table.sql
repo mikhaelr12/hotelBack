@@ -3,6 +3,9 @@ create table hotels
     id          bigint       primary key ,
     name        varchar(50)  not null unique,
     description varchar(500) not null,
+    image        varchar(75) not null,
+    address varchar(200) not null ,
+    phone_number varchar(50) not null ,
     country_id bigint not null ,
     constraint FK_COUNTRY_HOTEL foreign key (country_id) references countries (id)
 );

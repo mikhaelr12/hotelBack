@@ -6,9 +6,11 @@ import com.stripe.model.Charge;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import md.project.hotelback.dto.request.PaymentRequest;
+import md.project.hotelback.entity.BookingStatus;
 import md.project.hotelback.entity.HotelBooking;
 import md.project.hotelback.exception.BookingException;
 import md.project.hotelback.repository.HotelBookingRepository;
+import md.project.hotelback.repository.StatusRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
@@ -19,6 +21,7 @@ import java.util.Map;
 public class StripeServiceImpl {
 
     private final HotelBookingRepository hotelBookingRepository;
+    private final StatusRepository statusRepository;
 
     @Value("${secret_key}")
     private String stripeApiKey;
@@ -38,6 +41,9 @@ public class StripeServiceImpl {
         chargeParams.put("amount", amount);
         chargeParams.put("currency", "usd");
         chargeParams.put("source", paymentRequest.getSource());
+        BookingStatus status = statusRepository.findById(2L).orElse(null);
+        hotelBooking.setBookingStatus(status);
+        hotelBookingRepository.save(hotelBooking);
         return Charge.create(chargeParams);
     }
 }

@@ -4,26 +4,32 @@ import com.paypal.core.PayPalEnvironment;
 import com.paypal.core.PayPalHttpClient;
 import com.paypal.http.HttpResponse;
 import com.paypal.orders.*;
+import lombok.AllArgsConstructor;
 import md.project.hotelback.dto.request.PaymentRequest;
+import md.project.hotelback.entity.BookingStatus;
 import md.project.hotelback.entity.HotelBooking;
 import md.project.hotelback.repository.HotelBookingRepository;
+import md.project.hotelback.repository.StatusRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PayPalServiceImpl {
 
     private final HotelBookingRepository hotelBookingRepository;
     private final PayPalHttpClient client;
+    private final StatusRepository statusRepository;
 
     public PayPalServiceImpl(@Value("${paypal_clientId}") String clientId,
                              @Value("${paypal_clientSecret}") String clientSecret,
-                             @Value("${paypal_mode}") String mode, HotelBookingRepository hotelBookingRepository) {
+                             @Value("${paypal_mode}") String mode, HotelBookingRepository hotelBookingRepository, StatusRepository statusRepository) {
         this.hotelBookingRepository = hotelBookingRepository;
+        this.statusRepository = statusRepository;
         PayPalEnvironment environment;
         if ("live".equalsIgnoreCase(mode)) {
             environment = new PayPalEnvironment.Live(clientId, clientSecret);
@@ -68,6 +74,8 @@ public class PayPalServiceImpl {
         purchaseUnits.add(purchaseUnitRequest);
         orderRequest.purchaseUnits(purchaseUnits);
 
+        BookingStatus status = statusRepository.findById(2L).orElse(null);
+        booking.setBookingStatus(status);
         return orderRequest;
     }
 }

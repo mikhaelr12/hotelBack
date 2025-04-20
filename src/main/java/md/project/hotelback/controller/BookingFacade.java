@@ -5,6 +5,7 @@ import md.project.hotelback.dto.BookingDTO;
 import md.project.hotelback.dto.response.BookingResponse;
 import md.project.hotelback.entity.HotelBooking;
 import md.project.hotelback.factory.NotificationFactory;
+import md.project.hotelback.observer.BookingObserver;
 import md.project.hotelback.service.BookingService;
 import md.project.hotelback.util.TokenExtractServiceImpl;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ public class BookingFacade {
 
     private final NotificationFactory notificationFactory;
     private final BookingService bookingService;
+    private final BookingObserver bookingObserver;
 
     public BookingResponse book(BookingDTO bookingDTO,
                                 String token) {
@@ -23,7 +25,7 @@ public class BookingFacade {
         HotelBooking hotelBooking = bookingService.book(bookingDTO, jwt);
         notificationFactory.getNotificationService(bookingDTO.getNotificationType().toLowerCase())
                 .sendNotification(jwt, hotelBooking);
-
+        //bookingObserver.notifyObservers(hotelBooking);
         return new BookingResponse(hotelBooking.getId(), hotelBooking);
     }
 }

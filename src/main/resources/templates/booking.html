@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Room - Tripsio</title>
+    <link rel="stylesheet" href="/css/booking.css" />
+    <!-- Flatpickr CSS (if using Flatpickr) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1><a href="/index" class="main-page-button">Tripsio</a></h1>
+        <nav id="nav-links">
+            <ul>
+                <!-- Navigation links -->
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Book Your Room</h2>
+        <div id="room-details"></div>
+
+        <div id="bookedDatesInfo">
+        </div>
+
+        <!-- Booking Form -->
+        <form id="bookingForm">
+            <label for="checkIn">Check-In Date:</label>
+            <input type="text" id="checkIn" name="checkIn" placeholder="Select check-in" required>
+
+            <label for="checkOut">Check-Out Date:</label>
+            <input type="text" id="checkOut" name="checkOut" placeholder="Select check-out" required>
+
+            <label for="notificationType">Notification Type:</label>
+            <select id="notificationType" name="notificationType" required>
+                <option value="EMAIL">Email</option>
+                <option value="SMS">SMS</option>
+            </select>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Tripsio App</p>
+</footer>
+
+<!-- Include Flatpickr JS (if using Flatpickr) -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="/js/bookingPage.js"></script>
+<script src="/js/navbarService.js"></script>
+</body>
+</html>

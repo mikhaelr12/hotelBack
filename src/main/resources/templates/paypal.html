@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PayPal Payment</title>
+    <!-- Link external CSS file -->
+    <link rel="stylesheet" href="/css/paypal.css">
+</head>
+<body>
+<div class="container">
+    <h1>PayPal Payment</h1>
+    <!-- Display booking information -->
+    <div id="booking-info"></div>
+    <!-- Container for PayPal Buttons -->
+    <div id="paypal-button-container"></div>
+</div>
+
+<!-- Inject the PayPal client ID dynamically using Thymeleaf -->
+<script th:inline="javascript">
+    // Thymeleaf will replace [[${paypalClientId}]] with your configured client id.
+    const paypalClientId = /*[[${paypalClientId}]]*/ 'default_value';
+</script>
+
+<!-- Dynamically load the PayPal SDK using the injected client id -->
+<script th:inline="none">
+    (function loadPayPalSDK() {
+        const script = document.createElement('script');
+        script.src = "https://www.paypal.com/sdk/js?client-id=" + paypalClientId;
+        script.async = true;
+        document.head.appendChild(script);
+    })();
+</script>
+
+<!-- Link external JavaScript file -->
+<script src="/js/paypal.js"></script>
+</body>
+</html>

@@ -1,6 +1,5 @@
 package md.project.hotelback.util;
 
-import org.springframework.stereotype.Service;
 
 public class TokenExtractServiceImpl {
 

@@ -1,0 +1,199 @@
+/* Global Styles */
+body {
+    background: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+/* New hover text color rules */
+.room:hover h3,
+.room:hover p,
+.room:hover .price,
+.room:hover .view-button {
+    color: white;
+    border-color: white;
+}
+
+#rooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 60px; /* Prevent overlap with footer */
+}
+
+.room {
+    /*background: #fff;*/
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;  /* Increased width */
+    overflow: hidden;
+    transition: background 0.3s ease;
+    padding: 20px;  /* Optional: add padding for inner content spacing */
+}
+
+.room:hover {
+    background: #171616;
+}
+
+/* Change text color on hover */
+.room:hover h3,
+.room:hover p,
+.room:hover .price,
+.room:hover .view-button {
+    color: white;
+}
+
+.room img {
+    width: calc(100% + 40px); /* Extend image width to cover 20px on each side */
+    height: 250px;
+    object-fit: cover;
+    margin-left: -20px; /* Pull image to the left */
+    margin-right: -20px; /* Pull image to the right */
+    margin-top: -20px;
+    border-radius: 0;
+}
+
+.room h3 {
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+    color: black;
+}
+
+.room p {
+    margin: 0 15px 15px;
+    color: black;
+}
+
+.room .price {
+    margin: 0 15px 15px;
+    color: black;
+}
+
+.view-button {
+    display: block;
+    width: calc(100% - 50px);
+    margin: 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid transparent;  /* Transparent border initially */
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.view-button:hover {
+    border-color: black;  /* On hover, border turns black */
+    color: white;         /* Optional: change text color on hover */
+}
+
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    color: white;
+    padding: 20px;
+    position: relative;
+    z-index: 3;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Old Standard TT", Arial, sans-serif;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #3d3d49;
+    margin: 0;
+    font-size: 2em;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header nav ul li {
+    margin-left: 20px;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+    color: #ccc;
+}
+
+.main-page-button {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+footer {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#hero-section {
+    background-image: url('/images/heros/roomshero.jpg'); /* Update with your actual image path */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    z-index: 1;
+}
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Hero Content styling */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-family: "Old Standard TT", Arial, sans-serif;
+}
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
+    margin: 0;
+}
+.hero-content p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75em;
+}
+
+main {
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    color: #333;
+    position: relative;
+    /*background: #fff;*/
+    z-index: 2;
+    margin-top: 20px;
+    padding-top: 70px;
+}

@@ -19,6 +19,15 @@ public class Hotel {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @Column(name = "image", nullable = false)
+    private String image;
+
+    @Column(name = "address", nullable = false)
+    private String address;
+
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
+
     @ManyToOne
     @JoinColumn(name = "country_id", foreignKey = @ForeignKey(name = "FK_COUNTRY_HOTEL"))
     private Country country;

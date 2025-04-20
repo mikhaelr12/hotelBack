@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1><a href="/index" class="main-page-button">Tripsio</a></h1>
+        <nav id="nav-links">
+            <ul>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <p id="containerTitle">Log in</p>
+    <form id="login-form">
+            <input type="text" id="credential" placeholder="Credential" required />
+            <input type="password" id="password" placeholder="Password" required />
+        <div id="error-message" style="color: red; display: none;"></div>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign up</a> </p>
+</div>
+</body>
+</html>
+
+<script src="/js/authService.js"></script>
+<script src="/js/navbarService.js"></script>

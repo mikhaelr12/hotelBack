@@ -30,6 +30,6 @@ public class Room {
     private RoomType roomType;
 
     @ManyToOne
-    @JoinColumn(name = "location_id", foreignKey = @ForeignKey(name = "FK_LOCATION_ROOM"))
-    private Location location;
+    @JoinColumn(name = "hotel_id", foreignKey = @ForeignKey(name = "FK_HOTEL_ROOM"))
+    private Hotel hotel;
 }

@@ -1,9 +1,17 @@
-creational
+#creational
 factory method - notifications
-prototype - car
+prototype - copy booking
 singleton - token extract
-builder - user role
+builder - bookingDTO
 
-structural
+#structural
 facade - booking facade
-adapter - payment, stripe, paypal
+adapter - payment: stripe, PayPal
+proxy - booking, check if user logged in
+decorator - logging with email
+
+#behavioral
+strategy - with adapter for payments
+observer - notifying admins
+command - booking cancel
+template method - messages integrated with factory method

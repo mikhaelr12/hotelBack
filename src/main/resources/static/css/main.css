@@ -1,0 +1,211 @@
+/* Global Styles */
+body {
+    background: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    color: white;
+    padding: 20px;
+    position: relative; /* or fixed if needed */
+    z-index: 3;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Old Standard TT", Arial, sans-serif;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #3d3d49;
+    margin: 0;
+    font-size: 2em;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header nav ul li {
+    margin-left: 20px;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+    color: #ccc;
+}
+
+.main-page-button {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+/* Hero Section styling */
+#hero-section {
+    background-image: url('/images/heros/hero1.jpg'); /* Update with your actual image path */
+    background-attachment: fixed; /* Makes background static */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 800px; /* Adjust as needed */
+    position: relative;
+    z-index: 1;
+}
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay for better text visibility */
+}
+
+/* Hero Content styling */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    text-align: center;
+    color: #fff;
+    font-family: "Old Standard TT", Arial, sans-serif;
+}
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
+    margin: 0;
+}
+.hero-content p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75em;
+}
+
+/* Main Content styling */
+main {
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    color: #333;
+    position: relative;
+    /*background: #fff;*/
+    z-index: 2;
+    margin-top: 20px;  /* Reduced negative margin for slight overlap */
+    padding-top: 70px;  /* Adjust padding to give room for the overlap */
+}
+
+/* Featured Hotels Section */
+#featured-hotels {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+#featured-hotels h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#featured-hotels h1{
+    text-align: center;
+    font-size:3em;
+    margin-bottom: 20px;
+}
+
+#featured-hotels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Hotels Container */
+#hotels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 60px; /* Prevent overlap with footer */
+}
+
+/* Individual hotel card styling (Rooms) */
+/* Individual hotel card styling (Rooms) */
+.hotel {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;  /* Increased width */
+    overflow: hidden;
+    transition: transform 0.2s ease, background 0.3s ease;
+    padding: 20px; /* Optional internal padding */
+}
+.hotel:hover {
+    /* Removed the background change */
+    transform: translateY(-5px);
+}
+
+
+.hotel img {
+    width: calc(100% + 40px); /* Extend image width to cover 20px on each side */
+    height: 250px;
+    object-fit: cover;
+    margin-left: -20px; /* Pull image to the left */
+    margin-right: -20px; /* Pull image to the right */
+    margin-top: -20px;
+    border-radius: 0;
+}
+
+.hotel h2 {
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+    color: black;
+}
+
+.hotel p {
+    margin: 0 15px 15px;
+    color: black;
+}
+
+
+.view-button {
+    display: block;
+    width: calc(100% - 50px);
+    margin: 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+    background: #8f63af;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.view-button:hover {
+    background: #debaf6;
+}
+
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

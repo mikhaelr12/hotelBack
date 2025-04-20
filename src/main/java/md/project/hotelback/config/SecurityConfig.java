@@ -32,9 +32,16 @@ public class SecurityConfig{
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**",
-                                "/booking/**",
-                                "/payment/**").permitAll()
+                        .requestMatchers(
+                                //front
+                                "/signup","/login","/index",
+                                "/css/**","/js/**", "/hotel-rooms",
+                                "/booking", "/my-bookings", "/hotels",
+                                "/images/**", "/choose-payment", "/stripe", "/paypal",
+                                //back
+                                "/api/bookings/**", "/api/payments/**", "/api/auth/**",
+                                "/api/hotels/**", "/api/rooms/**"
+                                ).permitAll()
                         //.requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .authenticationProvider(authenticationProvider)

@@ -6,9 +6,9 @@ create table rooms
     image       varchar(75)   not null,
     description varchar(250)  not null,
     type_id     bigint        not null,
-    location_id bigint        not null,
+    hotel_id bigint        not null,
     constraint FK_TYPE_ROOM foreign key (type_id) references room_types (id),
-    constraint FK_LOCATION_ROOM foreign key (location_id) references locations (id)
+    constraint FK_HOTEL_ROOM foreign key (hotel_id) references hotels (id)
 );
 
 alter table rooms owner to root;
