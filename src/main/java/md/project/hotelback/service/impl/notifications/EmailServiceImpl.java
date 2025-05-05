@@ -3,7 +3,6 @@ package md.project.hotelback.service.impl.notifications;
 import md.project.hotelback.entity.HotelBooking;
 import md.project.hotelback.entity.User;
 import md.project.hotelback.factory.AbstractNotificationProcessor;
-import md.project.hotelback.service.NotificationService;
 import md.project.hotelback.util.BookingMessage;
 import md.project.hotelback.util.UserExtractServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

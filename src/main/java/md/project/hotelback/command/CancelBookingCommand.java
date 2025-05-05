@@ -5,7 +5,6 @@ import lombok.Data;
 import md.project.hotelback.service.BookingService;
 import org.springframework.stereotype.Component;
 
-@Data
 @AllArgsConstructor
 @Component("cancel")
 public class CancelBookingCommand implements Command {

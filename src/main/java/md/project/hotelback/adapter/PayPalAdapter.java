@@ -21,14 +21,12 @@ public class PayPalAdapter implements PaymentGateway {
         PaymentResponse response = new PaymentResponse();
         response.setId(order.id());
         response.setStatus(order.status());
-        // Extract approval link from the order if available.
         for (LinkDescription link : order.links()) {
             if ("approve".equalsIgnoreCase(link.rel())) {
                 response.setApprovalUrl(link.href());
                 break;
             }
         }
-        // For PayPal, you might not have an "amount" field in the same way.
         response.setAmount(null);
         response.setCurrency("usd");
         return response;
