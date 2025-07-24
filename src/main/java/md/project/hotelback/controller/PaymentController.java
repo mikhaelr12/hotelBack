@@ -1,7 +1,6 @@
 package md.project.hotelback.controller;
 
 import com.stripe.exception.*;
-import com.stripe.model.Charge;
 import lombok.RequiredArgsConstructor;
 import md.project.hotelback.adapter.PaymentGateway;
 import md.project.hotelback.dto.request.PaymentRequest;
@@ -10,11 +9,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
-
 import java.util.Map;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/api/payments")
 @RequiredArgsConstructor
 public class PaymentController {
 
@@ -36,4 +34,6 @@ public class PaymentController {
             throw new RuntimeException(e);
         }
     }
+
+
 }

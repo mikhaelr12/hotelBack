@@ -5,10 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import md.project.hotelback.prototype.BookingPrototype;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "hotel_bookings")
@@ -16,7 +15,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class HotelBooking {
+public class HotelBooking implements BookingPrototype {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hotel_booking_id_seq")
@@ -37,13 +36,27 @@ public class HotelBooking {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "location_id", foreignKey = @ForeignKey(name = "FK_LOCATION_BOOKING"))
-    private Location location;
+    @JoinColumn(name = "hotel_id", foreignKey = @ForeignKey(name = "FK_HOTEL_BOOKING"))
+    private Hotel hotel;
 
     @ManyToOne
     @JoinColumn(name = "room_id", foreignKey = @ForeignKey(name = "FK_ROOM_BOOKING"))
     private Room room;
 
-    @Column(name = "status_id")
-    private Long bookingStatus;
+    @ManyToOne
+    @JoinColumn(name = "status_id", foreignKey = @ForeignKey(name ="FK_STATUS_BOOKING"))
+    private BookingStatus bookingStatus;
+
+    @Override
+    public BookingPrototype clone() {
+        try {
+            HotelBooking clone = (HotelBooking) super.clone();
+            clone.setId(null);
+            return clone;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -15,7 +15,7 @@ public class RoomPriceCalculator {
     private final RoomRepository roomRepository;
 
     public Double calculatePrice(BookingDTO bookingDTO){
-        Room room = roomRepository.findById(bookingDTO.getRoomId()).get();
+        Room room = roomRepository.findById(bookingDTO.getRoom().getId()).orElse(null);
         long days = ChronoUnit.DAYS.between(bookingDTO.getCheckIn(), bookingDTO.getCheckOut());
         return days * room.getPrice();
     }

@@ -18,7 +18,6 @@ import java.util.List;
 @Data
 public class User implements UserDetails {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
     @SequenceGenerator(name = "user_id_seq", allocationSize = 1, sequenceName = "user_id_seq")
@@ -39,12 +38,11 @@ public class User implements UserDetails {
     @Column(name = "loyalty_points")
     private Integer loyaltyPoints;
 
-    @ManyToOne
     @JoinColumn(name = "role_id", foreignKey = @ForeignKey(name = "FK_ROLE_USER"))
-    private UserRole userRole;
+    private Long roleId;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(() -> userRole.getRoleName());
+        return List.of();
     }
 }

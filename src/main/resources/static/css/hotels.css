@@ -1,0 +1,120 @@
+/* Global styles */
+body {
+    background: rgba(103, 87, 87, 0.73);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Remove flex centering if not needed for the entire page */
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #6B73FF, #896d34);
+    color: #fff;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Main container styling */
+#hotels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 60px; /* Prevent overlap with footer */
+}
+
+/* Individual hotel card */
+.hotel {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.hotel:hover {
+    transform: translateY(-5px);
+}
+
+/* Hotel image */
+.hotel img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Hotel title */
+.hotel h2 {
+    margin: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Hotel country or other text */
+.hotel p {
+    margin: 0 15px 15px;
+    color: #777;
+}
+
+/* View button styling */
+.hotel .view-button {
+    display: block;
+    width: calc(100% - 50px);
+    margin: 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+    background: #000DFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hotel .view-button:hover {
+    background: #6B73FF;
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #6B73FF, #896d34);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,29 @@
+/* paypal.css */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f6f9fc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 480px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #32325d;
+    margin-bottom: 20px;
+}
+
+#booking-info {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #32325d;
+}

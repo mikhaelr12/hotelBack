@@ -36,3 +36,5 @@ build/
 application.yaml
 
 implementedPatterns.txt
+
+src/main/resources/static/images

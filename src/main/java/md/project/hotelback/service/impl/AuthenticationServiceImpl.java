@@ -28,8 +28,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public void signup(UserDTO userDTO) {
         var user = userRepository.findByUsername(userDTO.getUsername());
-        UserRole role = userRole.findById(1L)
-                .orElseThrow();
+
         if (user.isPresent()) {
             throw new UserException("Username is already in use");
         }
@@ -38,7 +37,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         newUser.setUsername(userDTO.getUsername());
         newUser.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         newUser.setEmail(userDTO.getEmail());
-        newUser.setUserRole(role);
+        newUser.setRoleId(1L);
 
         if (userDTO.getPhoneNumber() == null || userDTO.getPhoneNumber().isEmpty()) {
             newUser.setPhoneNumber("");
@@ -53,7 +52,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     public User login(UserDTO userDTO) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        userDTO.getUsername(),
+                        userDTO.getCredential(),
                         userDTO.getPassword()
                 )
         );

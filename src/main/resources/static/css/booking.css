@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-family: 'Old Standard TT', Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    color: #3d3d49;
+    font-size: 2em;
+}
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Main Content */
+main {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Booking Container */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.container h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #3d3d49;
+    margin-bottom: 20px;
+}
+
+/* Booking Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form label {
+    font-size: 1em;
+    color: #555;
+}
+form input[type="text"],
+form input[type="date"],
+form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+    border-color: #8f63ae;
+    outline: none;
+}
+button {
+    padding: 12px;
+    background: #8f63ae;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #7a52a7;
+}
+
+/* Booked Dates Info */
+#bookedDatesInfo {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+#bookedDatesInfo h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+#bookedDatesInfo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#bookedDatesInfo ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #efeff1, #8f63ae);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

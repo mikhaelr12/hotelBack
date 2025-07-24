@@ -23,13 +23,13 @@ public class AppConfiguration {
 
     @Bean
     UserDetailsService userDetailsService() {
-        return username -> {
-            if (username.contains("@")) {
-                return userRepository.findByEmail(username)
-                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
+        return identifier -> {
+            if (identifier.contains("@")) {
+                return userRepository.findByEmail(identifier)
+                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + identifier));
             }
-            return userRepository.findByUsername(username)
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+            return userRepository.findByUsername(identifier)
+                    .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + identifier));
         };
     }
 
